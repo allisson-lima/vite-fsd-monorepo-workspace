@@ -1,0 +1,30 @@
+{
+  "name": "vite-fsd-monorepo-workspace",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "npm@11.1.0",
+  "description": "Projeto de aprendizagem sobre monorepo frontend com Turborepo, Vite e Feature-Sliced Design",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "syncpack:check": "syncpack list-mismatches",
+    "syncpack:fix": "syncpack fix-mismatches",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "syncpack": "^13.0.4",
+    "turbo": "2.5.4",
+    "typescript": "^5.7.3"
+  }
+}
